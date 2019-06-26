@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "axios": "^0.19.0",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
+    "fast-deep-equal": "^2.0.1",
+    "lodash": "^4.17.11",
+    "ws": "^7.0.1"
+  },
+  "bin": {
+    "hue-notification-ws": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "debug": "DEBUG=hue-notification-ws node src/index.js",
+    "lint": "eslint src/ --ext .js"
+  },
+  "name": "hue-notification-ws",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "author": "Paolo Tremadio <hello@paolotremadio.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
+  }
+}

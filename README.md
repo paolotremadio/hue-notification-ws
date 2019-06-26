@@ -33,9 +33,9 @@ You can configure this app by passing the following environment variables:
 | `HUE_USERNAME` | String | `` | A valid Hue API username. [See Hue docs](https://developers.meethue.com/develop/get-started-2) to find out how to get one |  
 | `HUE_USE_SSL` | Boolean | `false` | Whether or not use HTTPS or not. Valid values: `true` or `1` / `false` or `0` | 
 | **Polling configs** | 
-| `POLL_LIGHTS` | Boolean | `true` | Whether or not polling for light changes |  
-| `POLL_GROUPS` | Boolean | `true` | Whether or not polling for groups/rooms changes |  
-| `POLL_SENSORS` | Boolean | `true` | Whether or not polling for sensor changes |  
+| `POLL_LIGHTS` | Boolean | `true` | Whether or not polling for light changes. Valid values: `true` or `1` / `false` or `0` |  
+| `POLL_GROUPS` | Boolean | `true` | Whether or not polling for groups/rooms changes. Valid values: `true` or `1` / `false` or `0` |  
+| `POLL_SENSORS` | Boolean | `true` | Whether or not polling for sensor changes. Valid values: `true` or `1` / `false` or `0` |  
 | `POLL_INTERVAL_SECONDS` | Number | `2` | The polling interval, in seconds |  
 | **WebSocket server configs** | 
 | `WEBSOCKET_SERVER_HOST` | String | `localhost` | The hostname to bind the websocket server to. Use `0.0.0.0` to bind to all IP addresses ' |  

@@ -16,7 +16,7 @@
     "lint": "eslint src/ --ext .js"
   },
   "name": "hue-notification-ws",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/index.js",
   "author": "Paolo Tremadio <hello@paolotremadio.com>",
   "license": "MIT",

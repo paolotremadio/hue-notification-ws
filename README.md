@@ -38,7 +38,7 @@ You can configure this app by passing the following environment variables:
 | `POLL_SENSORS` | Boolean | `true` | Whether or not polling for sensor changes. Valid values: `true` or `1` / `false` or `0` |  
 | `POLL_INTERVAL_SECONDS` | Number | `2` | The polling interval, in seconds |  
 | **WebSocket server configs** | 
-| `WEBSOCKET_SERVER_HOST` | String | `localhost` | The hostname to bind the websocket server to. Use `0.0.0.0` to bind to all IP addresses ' |  
+| `WEBSOCKET_SERVER_HOST` | String | `localhost` | The hostname to bind the websocket server to. Use `0.0.0.0` to bind to all IP addresses |  
 | `WEBSOCKET_SERVER_PORT` | Number | `7000` | The WebSocket server port |  
 
 ### Example of running with variables

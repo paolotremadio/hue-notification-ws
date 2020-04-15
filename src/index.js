@@ -80,7 +80,7 @@ const poll = async () => {
           if (!equal(oldState[apiResponseKeyToDiff], newState[apiResponseKeyToDiff])) {
             debug(`  ${resourceType}/${resourceId} has a different state. Firing a notification message`);
 
-            const message = composeChangeMessage(resourceType, resourceId, newState[apiResponseKeyToDiff]);
+            const message = composeChangeMessage(resourceType, resourceId, { ...newState.state, ...newState.action });
             wss.broadcast(JSON.stringify(message));
           }
         } catch (e) {

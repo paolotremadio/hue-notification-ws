@@ -59,8 +59,6 @@ const poll = async () => {
     resources.map((resourceType, index) => {
       debug(`- Checking ${resourceType}`);
 
-      const apiResponseKeyToDiff = resourceType === 'groups' ? 'action' : 'state';
-
       const apiResponse = responses[index].data;
 
       if (!_.isPlainObject(apiResponse)) {
@@ -77,7 +75,7 @@ const poll = async () => {
             return;
           }
 
-          if (!equal(oldState[apiResponseKeyToDiff], newState[apiResponseKeyToDiff])) {
+          if (!equal(oldState.state, newState.state) || !equal(oldState.action, newState.action)) {
             debug(`  ${resourceType}/${resourceId} has a different state. Firing a notification message`);
 
             const message = composeChangeMessage(resourceType, resourceId, { ...newState.state, ...newState.action });

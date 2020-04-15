@@ -59,6 +59,8 @@ const poll = async () => {
     resources.map((resourceType, index) => {
       debug(`- Checking ${resourceType}`);
 
+      const apiResponseKeyToDiff = resourceType === 'groups' ? 'action' : 'state';
+
       const apiResponse = responses[index].data;
 
       if (!_.isPlainObject(apiResponse)) {
@@ -71,14 +73,14 @@ const poll = async () => {
           const oldState = states[resourceType][resourceId];
 
           if (!oldState) {
-            // Resource not found, cannot diff, will move on
+            debug(`Resource "${resourceType}/${resourceId}" not found on local state; cannot diff, will move on`);
             return;
           }
 
-          if (!equal(oldState.state, newState.state)) {
+          if (!equal(oldState[apiResponseKeyToDiff], newState[apiResponseKeyToDiff])) {
             debug(`  ${resourceType}/${resourceId} has a different state. Firing a notification message`);
 
-            const message = composeChangeMessage(resourceType, resourceId, newState.state);
+            const message = composeChangeMessage(resourceType, resourceId, newState[apiResponseKeyToDiff]);
             wss.broadcast(JSON.stringify(message));
           }
         } catch (e) {

@@ -1,7 +1,9 @@
 
 Philips Hue "push" notifications over WebSocket  
 --  
-  
+
+# THIS REPO IS NOW DEPRECATED. Please use the official Hue API v2
+
 ## Intro  
 Looking to get "push" notifications from your Hue Bridge?
 Look no further: this app will poll the Hue Bridge for changes and send notifications over WebSocket every time something has changed.  
